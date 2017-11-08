@@ -98,27 +98,9 @@ class App extends Component {
 //     },
 //   });
 
-const NavApp = DrawerNavigator({
+const NavHome = StackNavigator({
   Home: {
     screen: App,
-  },
-  User: {
-    screen: UserContainer,
-  },
-  MyWallet: {
-    screen: MyWalletView,
-  },
-  MyVoucher: {
-    screen: MyVoucherView,
-  }
-}, {
-  // contentComponent: props => (<ScrollView><DrawerItems {...props}/></ScrollView>)
-   contentComponent: props => (<UserDrawer items={props} />)
-});
-
-export default NavHome = StackNavigator({
-  Home: {
-    screen: NavApp,
     navigationOptions: ({navigation}) => ({
       title: 'Home',
       headerLeft: (<Button onPress={() => navigation.navigate('DrawerToggle')} title={'User'} />),
@@ -141,6 +123,23 @@ export default NavHome = StackNavigator({
   },
 });
  
+export default NavApp = DrawerNavigator({
+  Home: {
+    screen: NavHome,
+  },
+  User: {
+    screen: UserContainer,
+  },
+  MyWallet: {
+    screen: MyWalletView,
+  },
+  MyVoucher: {
+    screen: MyVoucherView,
+  }
+}, {
+   contentComponent: props => (<UserDrawer items={props} />)
+});
+
 // export default NavApp = DrawerNavigator({
 //   Home: {
 //     screen: NavHome,
