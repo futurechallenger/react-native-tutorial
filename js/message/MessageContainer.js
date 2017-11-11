@@ -24,13 +24,7 @@ export default class MessageContainer extends React.Component {
       refreshing: false,
       loading: false,
     };
-
-    // this.sampleData = [{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }];
   }
-
-  // componentDidMount() {
-  //   this.requestData();
-  // }
 
   requestData = () => {
     const url = 'https://api.github.com/users/futurechallenger/repos';
@@ -72,14 +66,9 @@ export default class MessageContainer extends React.Component {
     <MessageCell item={item} />
   )
 
-  //TODO: catch error
-  componentDidCatch(error, info) {
-    // this.setState
-  }
-
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch', backgroundColor: 'white' }}>
+      <View style={styles.container}>
         <Text>Message</Text>
         <FlatList
           data={this.state.data || []}
@@ -93,3 +82,12 @@ export default class MessageContainer extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'stretch', 
+    backgroundColor: 'white' 
+  }
+});

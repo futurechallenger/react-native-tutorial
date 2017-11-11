@@ -42,16 +42,44 @@ export default class MessageCell extends React.PureComponent {
 }
 
 const styles = StyleSheet.create({
-  container: { alignItems: 'stretch', justifyContent: 'center', backgroundColor: 'white', paddingHorizontal: 10, paddingTop: 10, },
+  container: { 
+    alignItems: 'stretch', 
+    justifyContent: 'center', 
+    backgroundColor: 'white', 
+    paddingHorizontal: 10, 
+    paddingTop: 10,
+  },
   touchable: {
-    backgroundColor: 'yellow', alignItems: 'stretch', justifyContent: 'center',
+    backgroundColor: 'yellow', 
+    alignItems: 'stretch', 
+    justifyContent: 'center',
     height: 250,
   },
   touchableInside: {
-    flex: 1, justifyContent: 'flex-start', alignItems: 'center',
-    backgroundColor: 'orange', borderRadius: 10, overflow: 'hidden'
+    flex: 1, 
+    justifyContent: 'flex-start', 
+    alignItems: 'center',
+    backgroundColor: 'orange', 
+    borderRadius: 10, 
+    overflow: 'hidden'
   },
-  image: { borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: 'red', width: SCREEN_WIDTH - 20, height: 150 },
-  insideView: { flex: 1, justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'flex-start', paddingVertical: 20, marginHorizontal: 20 },
-  insideText: { textAlign: 'left', backgroundColor: 'yellow' },
+  image: { 
+    borderTopLeftRadius: 10, 
+    borderTopRightRadius: 10, 
+    backgroundColor: 'red', 
+    width: SCREEN_WIDTH - 20, 
+    height: 150 
+  },
+  insideView: { 
+    flex: 1, 
+    justifyContent: 'space-around', 
+    alignSelf: 'stretch', 
+    alignItems: 'flex-start', 
+    paddingVertical: 20, 
+    marginHorizontal: 20 
+  },
+  insideText: { 
+    textAlign: 'left', 
+    backgroundColor: 'yellow' 
+  },
 });
