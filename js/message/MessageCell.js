@@ -12,7 +12,13 @@ const {width, height} = Dimensions.get('window');
 const SCREEN_WIDTH = width;
 
 export default class MessageCell extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const {name, full_name} = this.props.item.item || {};
+    console.log(`===>message cell props, ${name}, ${full_name}`, this.props.item.item)
     return (
       <View style={{ alignItems: 'stretch', justifyContent: 'center', backgroundColor: 'white', paddingHorizontal: 10, paddingTop: 10, }}>
         <TouchableOpacity
@@ -30,8 +36,8 @@ export default class MessageCell extends React.PureComponent {
               style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: 'red', width: SCREEN_WIDTH - 20, height: 150 }}
               resizeMode={Image.resizeMode.stretch} />
             <View style={{ flex: 1, justifyContent: 'space-around', alignSelf: 'stretch', alignItems: 'flex-start', paddingVertical: 20, marginHorizontal: 20 }}>
-              <Text style={{ textAlign: 'left', backgroundColor: 'yellow' }}>世界城市日，骑行点亮城市</Text>
-              <Text style={{ textAlign: 'left', backgroundColor: 'yellow' }}>2017/10/31</Text>
+              <Text style={{ textAlign: 'left', backgroundColor: 'yellow' }}>{name}</Text>
+              <Text style={{ textAlign: 'left', backgroundColor: 'yellow' }}>{full_name}</Text>
             </View>
           </View>
         </TouchableOpacity>

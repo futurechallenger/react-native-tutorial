@@ -20,28 +20,32 @@ export default class MessageContainer extends React.Component {
     this.state = {
       error: false,
       page: 1,
+      data:[],
       refreshing: false,
       loading: false,
     };
+
+    // this.sampleData = [{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }];
   }
 
-  componentDidMount() {
-    this.requestData();
-  }
+  // componentDidMount() {
+  //   this.requestData();
+  // }
 
   requestData = () => {
-    const url = 'https://www.apple.com';
+    const url = 'https://api.github.com/users/futurechallenger/repos';
     fetch(url).then(res => {
       console.log('started fetch');
       return res.json()
     }).then(res => {
       this.setState({
-        data: [...this.state.data, ...res.result],
+        data: [...this.state.data, ...res], 
         error: res.error || null,
         laoding: false,
         refreshing: false,
       });
     }).catch(err => {
+      console.log('==> fetch error', err);
       this.setState({ error: err, loading: false, refreshing: false});
     });
   };
@@ -64,6 +68,10 @@ export default class MessageContainer extends React.Component {
     });
   };
 
+  renderItem = (item) => (
+    <MessageCell item={item} />
+  )
+
   //TODO: catch error
   componentDidCatch(error, info) {
     // this.setState
@@ -74,10 +82,9 @@ export default class MessageContainer extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch', backgroundColor: 'white' }}>
         <Text>Message</Text>
         <FlatList
-          data={[{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }]}
-          renderItem={({ item }) => (
-            <MessageCell />
-          )}
+          data={this.state.data || []}
+          renderItem={this.renderItem}
+          keyExtractor={item => item.id}
           refreshing={this.state.refreshing}
           onRefresh={this.handleRefresh}
           onEndReached={this.handleLoadMore}
