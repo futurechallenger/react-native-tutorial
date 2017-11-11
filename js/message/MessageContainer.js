@@ -31,7 +31,10 @@ export default class MessageContainer extends React.Component {
 
   requestData = () => {
     const url = 'https://www.apple.com';
-    fetch(url).then(res => res.json()).then(res => {
+    fetch(url).then(res => {
+      console.log('started fetch');
+      return res.json()
+    }).then(res => {
       this.setState({
         data: [...this.state.data, ...res.result],
         error: res.error || null,
