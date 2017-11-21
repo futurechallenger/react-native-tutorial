@@ -17,11 +17,11 @@ import {
 } from 'react-native';
 import { DrawerNavigator, StackNavigator, DrawerItems } from 'react-navigation';
 
-import UserContainer from './js/user/UserContainer';
-import MessageContainer from './js/message/MessageContainer';
-import UserDrawer from './js/user/UserDrawer';
-import MyWalletView from './js/user/MyWalletView';
-import MyVoucherView from './js/user/MyVoucherView';
+import UserContainer from './user/UserContainer';
+import MessageContainer from './message/MessageContainer';
+import UserDrawer from './user/UserDrawer';
+import MyWalletView from './user/MyWalletView';
+import MyVoucherView from './user/MyVoucherView';
 
 class App extends Component {
   // static navigationOptions = {

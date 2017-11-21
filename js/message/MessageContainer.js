@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  StyleSheet,
 } from 'react-native';
 
 import MessageCell from './MessageCell';
