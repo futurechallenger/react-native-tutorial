@@ -49,6 +49,7 @@ export default class MessageContainer extends React.Component {
       page: 1,
       refreshing: true,
       loading: false,
+      data: [],
     }, () => {
       this.requestData();
     });
