@@ -1,7 +1,7 @@
 /**
  * A test reducer
  */
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 const defaultState = {
   loadDone: false,
@@ -9,7 +9,7 @@ const defaultState = {
 }
 
 function testReducer(state = defaultState, action) {
-  if(action.type === 'LOAD_DATA') {
+  if (action.type === 'LOAD_DATA') {
     return {
       loadDone: true,
     }

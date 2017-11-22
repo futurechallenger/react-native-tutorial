@@ -40,12 +40,6 @@ const dispatchToProps = (dispatch) => {
 }
 
 class App extends Component {
-  // static navigationOptions = {
-  //   title: 'Home',
-  //   headerRight: (<Button title={'Right'} onPress={() => {this._toggleDrawer()} }/>),
-  //   headerLeft: (<Button title={'Left'} onPress={(e) => {console.log('hello left button clicked');}} />)
-  // }
-
   constructor(props) {
     super(props);
 
@@ -71,15 +65,6 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
         <View style={styles.welcome}>
           <Text key="1">Hello</Text>
           <Text key="2">{this.props.test.loadDone ? 'DONE' : 'NOT YET'}</Text>
@@ -91,11 +76,6 @@ class App extends Component {
             }}
             title="click hello world" />
         </View>
-        {/* <FlatList
-          style={{flex: 1, backgroundColor: 'yellow'}}
-          contentContainerStyle={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
-          data={[{title: 'title 1', key: 'item1'}, {title: 'title 2', key: 'item2'}]}
-          renderItem={({item}) => (<Text style={styles.row} key={item.key}>{item.title}</Text>)} /> */}
       </View>
     );
   }
