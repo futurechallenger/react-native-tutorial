@@ -10,7 +10,6 @@ import {
   StyleSheet,
   Text,
   View,
-  FlatList,
   ListItem,
   Button,
   ScrollView,

@@ -97,11 +97,9 @@ const FlatListItem = (props) => (
 export default class UserDrawer extends React.Component {
   constructor(props) {
     super(props);
-
-    this._renderFlatListItem = this._renderFlatListItem.bind(this);
   }
 
-  _renderFlatListItem(item) {
+  _renderFlatListItem = (item) => {
     console.log('render item', item);
     let { iconPath, title, subTitle } = item;
     return (
