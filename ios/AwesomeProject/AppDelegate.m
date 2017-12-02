@@ -12,12 +12,21 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
+#import "AwesomeProject-Swift.h"
+
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // TODO: hot reload
+  //  1. check new version
+  //  2. download if there's new version
+  //  3. store somewhere
+  //  4. in bundle loader, check if there's new patch bundle, load if there is.
+  
   NSURL *jsCodeLocation;
 
+//  Boolean patchResult = [PatchManager checkPatchAvailable];
+  
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

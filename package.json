@@ -7,6 +7,13 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"babel-polyfill": "^6.26.0",
+		"koa": "^2.4.1",
+		"koa-body": "^2.5.0",
+		"koa-router": "^7.3.0",
+		"koa-static": "^4.0.2",
+		"koa-views": "^6.1.2",
+		"lodash": "^4.17.4",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.49.5",
 		"react-navigation": "^1.0.0-beta.20",
@@ -16,10 +23,14 @@
 		"redux-thunk": "^2.2.0"
 	},
 	"devDependencies": {
+		"babel-cli": "^6.26.0",
 		"babel-jest": "21.2.0",
+		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-react-native": "4.0.0",
+		"babel-preset-stage-0": "^6.24.1",
 		"jest": "21.2.1",
-		"react-test-renderer": "16.0.0-beta.5"
+		"react-test-renderer": "16.0.0-beta.5",
+		"roadhog": "^1.3.1"
 	},
 	"jest": {
 		"preset": "react-native"
