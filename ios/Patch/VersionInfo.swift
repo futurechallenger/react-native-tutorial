@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct VersionInfo: Codable {
+@objc open class VersionInfo: NSObject, Codable {
   /// server version which is used to update local bundle
-  public let currentVersion: String = ""
+  public var currentVersion: String = ""
   
   /// If local bundle version is one of these, it's ok to update
   public var supportedVersions: [String] = []
@@ -22,5 +22,6 @@ struct VersionInfo: Codable {
   enum CodingKeys: String, CodingKey {
     case currentVersion = "current_version"
     case supportedVersions = "supported_versions"
+    case status = "status"
   }
 }

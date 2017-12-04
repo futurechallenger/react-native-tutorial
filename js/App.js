@@ -73,7 +73,7 @@ class App extends Component {
               this._startAsyncAction();
               console.log('click a button');
             }}
-            title="click hello world" />
+            title="Let's kick some ass" />
         </View>
       </View>
     );

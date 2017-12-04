@@ -17,19 +17,20 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // TODO: hot reload
-  //  1. check new version
-  //  2. download if there's new version
-  //  3. store somewhere
-  //  4. in bundle loader, check if there's new patch bundle, load if there is.
-  
+  // TODO: Check if patch works
   NSURL *jsCodeLocation;
 
-//  Boolean patchResult = [PatchManager checkPatchAvailable];
+  [PatchManager checkPatchAvailable];
+  NSURL *patchFullPath = [[[Configuration shared] patchDestination] URLByAppendingPathComponent:@"index.bundle"];
+  if([[NSFileManager defaultManager] fileExistsAtPath: patchFullPath.path]) {
+    jsCodeLocation = patchFullPath;
+  } else {
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  }
   
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  NSLog(@"==>Current JS code location %@", jsCodeLocation.absoluteString);
 
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+  RCTRootView *rootView = [[RCTRootView alloc]initWithBundleURL:jsCodeLocation
                                                       moduleName:@"AwesomeProject"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];

@@ -9,7 +9,10 @@
 import Foundation
 
 enum PatchError: Error {
+  case whoKnowsError
   case fileNotExists
   case unzipPatchError
   case deletePatchError
+  case dataError
+  case createDownloadError
 }

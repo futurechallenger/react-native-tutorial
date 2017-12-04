@@ -3,6 +3,7 @@ const serve = require('koa-static');
 const koaBody = require('koa-body');
 const router = require('koa-router')();
 const views = require('koa-views');
+// const mine = require('mine');
 
 const _ = require('lodash');
 const fs = require('fs');
@@ -10,7 +11,7 @@ const os = require('os');
 const path = require('path');
 const extname = path.extname;
 
-const BUNDLE_NAME = 'hot_reload.bundle';
+const BUNDLE_NAME = 'hot_reload.bundle.zip';
 
 const app = new Koa();
 
@@ -22,13 +23,8 @@ const REST_OBJ = {
 app.use(views(path.join(__dirname, '/views'), {extension: 'ejs'}));
 app.use(koaBody({ multipart: true }));
 
-router.get('/api/version/current', async (ctx) => {
-  // return JSON.stringify(_.assign({}, REST_OBJ, ))
-  ctx.body = JSON.stringify({ ...REST_OBJ, version: 3 });
-});
-
-router.get('/bundle/download', async (ctx) => {
-  const fpath = path.join(__dirname, '/public');
+router.get('/patch/download', async (ctx) => {
+  const fpath = path.join(__dirname, 'public', BUNDLE_NAME);
   console.log(`===> download path ${fpath}`);
   const fstat = await stat(fpath);
 
@@ -36,6 +32,19 @@ router.get('/bundle/download', async (ctx) => {
     ctx.type = extname(fpath);
     ctx.body = fs.createReadStream(fpath);
   }
+})
+
+/**
+ * TODO: according to app's bundle version, return `supported versions`.
+ */
+router.get('/api/patch/version', async (ctx) => {
+  ctx.body = JSON.stringify({
+    current_version: '1.0.0',
+    supported_versions: [
+      '0.8.0', '0.9.0'
+    ],
+    status: true,
+  });
 })
 
 app.use(async (ctx, next) => {

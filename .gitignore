@@ -52,7 +52,15 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
+# VSCode
+.vscode
+
 # iOS
 ios/Pods/
 ios/Podfile.lock
 ios/AwesomeProject.xcworkspace/
+
+# bundle
+out-bundle
+out-bundle.zip
+

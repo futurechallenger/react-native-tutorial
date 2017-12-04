@@ -41,9 +41,9 @@
 		8A20E03B1FD2665F0034E6B8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20E03C1FD2665F0034E6B8 /* RxSwift.framework */; };
 		8A20E0401FD2714A0034E6B8 /* VersionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E03D1FD2714A0034E6B8 /* VersionInfo.swift */; };
 		8A20E0421FD2714A0034E6B8 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E03F1FD2714A0034E6B8 /* PatchManager.swift */; };
-		8A20E0441FD271E90034E6B8 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E0431FD271E90034E6B8 /* HttpUtil.swift */; };
-		8A20E0461FD273910034E6B8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E0451FD273910034E6B8 /* Configuration.swift */; };
-		8A20E0481FD280610034E6B8 /* PatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E0471FD280610034E6B8 /* PatchError.swift */; };
+		8A20E04C1FD2D17B0034E6B8 /* PatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E0491FD2D17A0034E6B8 /* PatchError.swift */; };
+		8A20E04D1FD2D17B0034E6B8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E04A1FD2D17B0034E6B8 /* Configuration.swift */; };
+		8A20E04E1FD2D17B0034E6B8 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E04B1FD2D17B0034E6B8 /* HttpUtil.swift */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
 
@@ -327,9 +327,9 @@
 		8A20E03C1FD2665F0034E6B8 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A20E03D1FD2714A0034E6B8 /* VersionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionInfo.swift; path = Patch/VersionInfo.swift; sourceTree = "<group>"; };
 		8A20E03F1FD2714A0034E6B8 /* PatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchManager.swift; path = Patch/PatchManager.swift; sourceTree = "<group>"; };
-		8A20E0431FD271E90034E6B8 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
-		8A20E0451FD273910034E6B8 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		8A20E0471FD280610034E6B8 /* PatchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchError.swift; sourceTree = "<group>"; };
+		8A20E0491FD2D17A0034E6B8 /* PatchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchError.swift; path = Patch/PatchError.swift; sourceTree = "<group>"; };
+		8A20E04A1FD2D17B0034E6B8 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Patch/Configuration.swift; sourceTree = "<group>"; };
+		8A20E04B1FD2D17B0034E6B8 /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpUtil.swift; path = Patch/HttpUtil.swift; sourceTree = "<group>"; };
 		8AB856401FD1AB6F005A47C3 /* Pods_AwesomeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_AwesomeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB856431FD1AC51005A47C3 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB856441FD1AC51005A47C3 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -582,12 +582,12 @@
 		8A80E15E1FD1051900C5C179 /* Patch */ = {
 			isa = PBXGroup;
 			children = (
+				8A20E04A1FD2D17B0034E6B8 /* Configuration.swift */,
+				8A20E04B1FD2D17B0034E6B8 /* HttpUtil.swift */,
+				8A20E0491FD2D17A0034E6B8 /* PatchError.swift */,
 				8A20E03F1FD2714A0034E6B8 /* PatchManager.swift */,
 				8A20E03D1FD2714A0034E6B8 /* VersionInfo.swift */,
 				8AC1D6CA1FD1555600DA7694 /* AwesomeProject-Bridging-Header.h */,
-				8A20E0431FD271E90034E6B8 /* HttpUtil.swift */,
-				8A20E0451FD273910034E6B8 /* Configuration.swift */,
-				8A20E0471FD280610034E6B8 /* PatchError.swift */,
 			);
 			name = Patch;
 			sourceTree = "<group>";
@@ -1159,12 +1159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A20E0421FD2714A0034E6B8 /* PatchManager.swift in Sources */,
-				8A20E0461FD273910034E6B8 /* Configuration.swift in Sources */,
+				8A20E04E1FD2D17B0034E6B8 /* HttpUtil.swift in Sources */,
 				8A20E0401FD2714A0034E6B8 /* VersionInfo.swift in Sources */,
-				8A20E0481FD280610034E6B8 /* PatchError.swift in Sources */,
+				8A20E04D1FD2D17B0034E6B8 /* Configuration.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8A20E04C1FD2D17B0034E6B8 /* PatchError.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				8A20E0441FD271E90034E6B8 /* HttpUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
