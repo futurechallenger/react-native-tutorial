@@ -99,10 +99,10 @@ android {
 
     defaultConfig {
         applicationId "com.awesomeproject"
-        minSdkVersion 16
+        minSdkVersion 20
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.5"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
