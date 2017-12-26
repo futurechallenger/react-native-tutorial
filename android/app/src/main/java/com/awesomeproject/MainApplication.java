@@ -1,24 +1,11 @@
 package com.awesomeproject;
 
 import android.app.Application;
-<<<<<<< HEAD
-
-=======
->>>>>>> 66ae2b2... native-baser
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-<<<<<<< HEAD
-
-import java.util.Arrays;
-import java.util.List;
-
-public class MainApplication extends Application implements ReactApplication {
-
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-=======
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -63,7 +50,6 @@ public class MainApplication extends Application implements ReactApplication {
       super(application);
     }
 
->>>>>>> 66ae2b2... native-baser
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -71,48 +57,31 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
-      );
+      return Arrays.<ReactPackage>asList(new MainReactPackage());
     }
 
     @Override
     protected String getJSMainModuleName() {
       return "index";
     }
-  };
 
-<<<<<<< HEAD
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
-
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
-=======
     @Nullable
     @Override
     protected String getJSBundleFile() {
-      String jsBundleFile
-          = ((MainApplication) getApplication()).getApplicationContext().getFilesDir()
-          .getAbsolutePath() + "/index.android.bundle";
+      String jsBundleFile = ((MainApplication) getApplication()).getApplicationContext().getFilesDir().getAbsolutePath()
+          + "/index.android.bundle";
       File file = new File(jsBundleFile);
       if (file == null || !file.exists()) {
         return super.getJSBundleFile();
       }
       return jsBundleFile;
     }
-  }
+  };
 
   private void downloadHotPatch() {
     OkHttpClient client = new OkHttpClient();
 
-    Request request = new Request.Builder()
-        .url("http://10.0.2.2:3033/patch/download")
-        .build();
+    Request request = new Request.Builder().url("http://10.0.2.2:3033/patch/download").build();
 
     client.newCall(request).enqueue(new Callback() {
       @Override
@@ -127,14 +96,13 @@ public class MainApplication extends Application implements ReactApplication {
         }
 
         BufferedSource source = response.body().source();
-        File destFile = new File(getApplicationContext().getFilesDir()
-            .getAbsolutePath() + "/index.android.bundle");
+        File destFile = new File(getApplicationContext().getFilesDir().getAbsolutePath() + "/index.android.bundle");
         BufferedSink sink = Okio.buffer(Okio.sink(destFile));
         Buffer sinkBuffer = sink.buffer();
 
         long totalBytesRead = 0;
         int bufferSize = 8 * 1024;
-        for (long bytesRead; (bytesRead = source.read(sinkBuffer, bufferSize)) != -1; ) {
+        for (long bytesRead; (bytesRead = source.read(sinkBuffer, bufferSize)) != -1;) {
           sink.emit();
           totalBytesRead += bytesRead;
         }
@@ -143,6 +111,5 @@ public class MainApplication extends Application implements ReactApplication {
         source.close();
       }
     });
->>>>>>> 66ae2b2... native-baser
   }
 }
