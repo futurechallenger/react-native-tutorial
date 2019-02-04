@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.2)
+  - RxSwift (4.1.2)
+  - SSZipArchive (2.1.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - RxSwift (~> 4.0)
+  - SSZipArchive
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - RxSwift
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SSZipArchive: d4009d2ce5520a421f231fd97028cc0e2667eed8
+
+PODFILE CHECKSUM: 8ca85095c84a97e0f2fe040b90986046b9ad17ca
+
+COCOAPODS: 1.5.3
