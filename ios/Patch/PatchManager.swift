@@ -9,9 +9,10 @@
 import Foundation
 import Alamofire
 import RxSwift
+import SSZipArchive
 
 @objc open class PatchManager: NSObject {
-  public class func checkPatchAvailable() {
+  @objc public class func checkPatchAvailable() {
     let observable = HttpUtil.fetchPatchVersion(versionApi: "\(Configuration.ServerRoot)\(Configuration.PatchVersionAPI)")
     observable.subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .utility))
       .filter{versionInfo in

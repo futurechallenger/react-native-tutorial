@@ -1,9 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'AwesomeProject' do
     pod 'SSZipArchive'
     pod 'Alamofire', '~> 4.5'
     pod 'RxSwift',    '~> 4.0'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
 end
