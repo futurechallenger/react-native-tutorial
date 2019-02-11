@@ -42,6 +42,16 @@ Then copy files like:
 * `.gitignore`, **DO REMEMBER** to merge this file, you have to keep you own modification.
 * `.watchmanconfig`
 
+### Upgrade Babel Config
+Maybe it's OK to keep your babel config file name as `.babelrc`, but the current one is named `babel.config.js`. So let's name it as the new one.
+
+Change the content of the config file to:
+```javascript
+module.exports = {
+  presets: ["module:metro-react-native-babel-preset"]
+}
+```
+
 ### Upgrade iOS
 
 You might going to upgrade swift version. Follow the swift way. I met some problems in swift 4.2. The class method can not be called in OC. As there's a modification in Swift 4.2.
