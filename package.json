@@ -1,37 +1,38 @@
 {
-	"name": "AwesomeProject",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"babel-polyfill": "^6.26.0",
-		"koa": "^2.4.1",
-		"koa-body": "^2.5.0",
-		"koa-router": "^7.3.0",
-		"koa-static": "^4.0.2",
-		"koa-views": "^6.1.2",
-		"lodash": "^4.17.4",
-		"mime": "^2.0.3",
-		"react": "16.6.3",
-		"react-native": "0.58.3",
-		"react-native-gesture-handler": "^1.0.15",
-		"react-navigation": "^3.1.2",
-		"react-redux": "^6.0.0",
-		"redux": "^4.0.1",
-		"redux-logger": "^3.0.6",
-		"redux-thunk": "^2.3.0"
-	},
-	"devDependencies": {
-		"babel-core": "^7.0.0-bridge.0",
-		"babel-jest": "24.0.0",
-		"jest": "24.0.0",
-		"metro-react-native-babel-preset": "0.51.1",
-		"react-test-renderer": "16.6.3"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "AwesomeProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.2",
+    "lodash": "^4.17.4",
+    "mime": "^2.0.3",
+    "react": "17.0.2",
+    "react-native": "0.66.0",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-navigation": "^4.4.4",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-test-renderer": "16.6.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
